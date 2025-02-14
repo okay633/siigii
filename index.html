@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Surprise</title>
+    <style>
+        body {
+            background-color: #ffccd5;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 2s ease-in-out;
+            animation: backgroundAnimation 5s infinite alternate;
+        }
+
+        @keyframes backgroundAnimation {
+            0% { background-color: #ffccd5; }
+            100% { background-color: #ff99aa; }
+        }
+
+        .button {
+            font-size: 1.5rem;
+            padding: 15px 30px;
+            background-color: #ff0055;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .gif-container {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .gif-container img {
+            width: 150px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .message {
+            font-size: 1.5rem;
+            color: #ff0055;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            width: 0;
+            animation: typing 3s steps(40, end) forwards;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+    </style>
+    <script>
+        function showMessage() {
+            document.getElementById('startPage').classList.add('hidden');
+            document.getElementById('messagePage').classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+    <div id="startPage">
+        <button class="button" onclick="showMessage()">Click Here 💕</button>
+    </div>
+    
+    <div id="messagePage" class="hidden">
+        <h1 class="message">Happy Valentine's Day! 💖</h1>
+        <h2 class="message">I wanted to tell you that I like you a lot. You make me happy.</h2>
+        <h2 class="message">Being with you is fun. You are kind and nice.</h2>
+        <h2 class="message">Thank you for being my Valentine. ❤️</h2>
+        <div class="gif-container">
+            <img src="https://www.icegif.com/wp-content/uploads/2024/10/cute-icegif-2.gif" alt="Cute GIF">
+            <img src="https://storage.ko-fi.com/cdn/useruploads/display/a5480113-7d1f-4c44-9b9e-3c365aa6ea7d_untitled_artwork.gif" alt="Heart GIF">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTdwZWxrNjJodWU4MThiaHM4ZjFjZm05dTAzazNqdGVmYzBtbGNiaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/yc2pHdAoxVOrJ2m5Ha/giphy.gif" alt="Valentine GIF">
+        </div>
+    </div>
+</body>
+</html>
